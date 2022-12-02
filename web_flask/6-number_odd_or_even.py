@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Script that starts a Flask a web application"""
+"""Script that starts a Flask a web application."""
 from flask import Flask
 
 
@@ -39,11 +39,13 @@ def is_int(n):
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
+    '''Display html page'''
 def template_isInt(n):
-		return render_templates('5-number.html', number=n)
+    return render_templates('5-number.html', number=n)
 
 
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
+    '''Display html page'''
     num = 'odd' if n % 2 else 'even'
     return render_template("6-number_odd_or_even.html", number=n,
                            num=num)
