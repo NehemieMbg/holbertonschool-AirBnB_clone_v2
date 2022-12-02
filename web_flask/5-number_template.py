@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """
 Simple module that starts a Flask web application
+Starting to display formatted text and conditional message
+Addind basic template
 """
 from flask import Flask, render_template
 
@@ -50,12 +52,13 @@ def is_num(n):
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def numbersandtemp(n):
-		"""
-		Display 5-number.html number only if integer
-		"""
+    """
+    Displays 5-number.html template
+    only if n is an integer
+    """
     return render_template("5-number.html", number=n)
 
 
 if __name__ == "__main__":
-    """Listen to the port"""
+    """ app listening on host 0.0.0.0 and port 5000 """
     app.run(host='0.0.0.0', port='5000')
